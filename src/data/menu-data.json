@@ -1,0 +1,354 @@
+{
+  "restaurant": {
+    "name": "My Deli",
+    "tagline": "Brunch & Suits",
+    "currency": "MXN",
+    "currencySymbol": "$"
+  },
+  "menus": [
+    {
+      "id": "desayunos",
+      "label": "Desayunos",
+      "hours": "9:00 AM – 1:30 PM",
+      "categories": [
+        {
+          "name": "Del Día",
+          "items": [
+            {
+              "name": "Plato de Frutas",
+              "description": "Mix de frutas de temporada, acompañado de yogurt, miel y granola",
+              "price": 75
+            },
+            {
+              "name": "Ensalada de la Huerta",
+              "description": "Mix de lechugas, betabel, manzana verde, queso de cabra y miel de avellana",
+              "price": 120
+            },
+            {
+              "name": "Bowl Griego",
+              "description": "Mix de frutas rojas, kiwi, acompañadas de yogurt con menta, miel y granola",
+              "price": 140
+            }
+          ]
+        },
+        {
+          "name": "Huevos",
+          "items": [
+            {
+              "name": "Huevos al Gusto",
+              "description": "Al elegir: jamón, tocino o a la mexicana, acompañado con frijoles sofritos",
+              "price": 130
+            },
+            {
+              "name": "Huevos Divorciados",
+              "description": "Bañados en salsa roja y salsa verde, acompañados con frijoles sofritos",
+              "price": 150
+            },
+            {
+              "name": "Huevos Cazuela",
+              "description": "Al elegir chistorra o chorizo argentino, bañados en salsa roja y gratinados, acompañados de pan blanco",
+              "price": 150
+            },
+            {
+              "name": "Omelette",
+              "description": "A elegir: champiñón, espinaca o jamón de pavo con queso manchego o panela, acompañado con frijoles sofritos y chilaquiles",
+              "price": 150
+            },
+            {
+              "name": "Omelette Light",
+              "description": "Elaborado con clara de huevo, acompañado de nopal light y queso asado",
+              "price": 140
+            }
+          ]
+        },
+        {
+          "name": "Clásicos",
+          "items": [
+            {
+              "name": "Chilaquiles 100 gr.",
+              "description": "Salsa verde o roja, acompañados con huevo, pollo o arrachera",
+              "price": 150
+            },
+            {
+              "name": "Chilaquiles Americanos 250 gr.",
+              "description": "Salsa verde o roja, acompañados con un corte de rib eye y gratinadas",
+              "price": 350
+            },
+            {
+              "name": "Enchiladas Suizas con Pollo 100 gr.",
+              "description": "Salsa cremosa especial verde o roja, acompañadas con pollo y gratinadas",
+              "price": 150
+            },
+            {
+              "name": "Enchiladas Suizas con Arrachera 100 gr.",
+              "description": "Salsa cremosa especial verde o roja, acompañadas con arrachera y gratinadas",
+              "price": 180
+            },
+            {
+              "name": "Hot Cakes (2 pz.)",
+              "description": "Mantequilla y frutos rojos",
+              "price": 130
+            },
+            {
+              "name": "Hot Cakes Especiales (2 pz.)",
+              "description": "Bañados en crema de matcha y baileys, acompañados con 2 piezas de huevo y chorizo argentino",
+              "price": 180
+            },
+            {
+              "name": "Pan Francés",
+              "description": "Pan de molde relleno de mousse de pistache, mermelada, berries y trozos de fresa",
+              "price": 150
+            }
+          ]
+        },
+        {
+          "name": "Entrepanes",
+          "items": [
+            {
+              "name": "Avo Toast",
+              "description": "Pan sourdough, huevo, queso de cabra, tocino, pepitas y jitomate cherry, acompañado con ensalada",
+              "price": 145
+            },
+            {
+              "name": "Salmón Toast 80 gr.",
+              "description": "Pan sourdough, cremoso de menta, salmón, arugula, aguacate y jitomate cherry, acompañado con ensalada",
+              "price": 160
+            },
+            {
+              "name": "Huevos Benny",
+              "description": "Pan masa madre, jamón pavo, huevo pochado bañados en salsa de queso cremoso",
+              "price": 145
+            },
+            {
+              "name": "Molletes Parisinos",
+              "description": "Croissant, frijoles, huevo, gratinada, a elegir chistorra, chorizo argentino, jamón o tocino, acompañado de ensalada",
+              "price": 140
+            },
+            {
+              "name": "Chapata de Pollo 100 gr.",
+              "description": "Chapata tostada untada de un cremoso dijon, tomate horneado, queso manchego y parmesano, acompañado de ensalada y papas gajo",
+              "price": 160
+            },
+            {
+              "name": "Croque Madame",
+              "description": "Pan blanco relleno con jamón de pavo y queso manchego, bañado de salsa de tocino cremoso y coronado con huevo",
+              "price": 160
+            },
+            {
+              "name": "Chapata de Rib Eye 100 gr.",
+              "description": "Chapata de mezquite, cremoso de menta, arugula y guacamole, acompañado con papas gajo",
+              "price": 170
+            },
+            {
+              "name": "Grill Cheese",
+              "description": "Hogaza de pan artesanal, cremoso de 3 quesos — chihuahua, cheddar y manchego — acompañado de tomate en arugula",
+              "price": 180
+            },
+            {
+              "name": "Grilled Cheese Napolitana",
+              "description": "Pan de masa madre fundido en 3 quesos, acompañado de una cremosa salsa napolitana",
+              "price": 180
+            }
+          ]
+        },
+        {
+          "name": "Extras",
+          "items": [
+            {
+              "name": "Ingrediente extra",
+              "description": "Huevo, guacamole, salsa martajada o crema",
+              "price": 35
+            },
+            {
+              "name": "Proteína extra",
+              "description": "Arrachera, pollo, chistorra o chorizo argentino",
+              "price": 70
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "comidas",
+      "label": "Comidas",
+      "hours": "A partir de 1:30 PM",
+      "categories": [
+        {
+          "name": "Yakimeshi",
+          "items": [
+            {
+              "name": "Vegetales",
+              "description": "Calabaza, zanahoria, brócoli y mix de pimientos",
+              "price": 90
+            },
+            {
+              "name": "Mixto",
+              "description": "Vegetales, res, pollo y camarón",
+              "price": 120
+            }
+          ]
+        },
+        {
+          "name": "Platos Fuertes",
+          "items": [
+            {
+              "name": "Camarones al Coco",
+              "description": "Camarones rebosados en coco, sobre una cama de lechuga, acompañados de salsa de mango",
+              "price": 280
+            },
+            {
+              "name": "Camarones Momia",
+              "description": "Camarones rellenos de salmón, aguacate y queso crema, envueltos en fideos de pasta con una salsa de tomate",
+              "price": 310
+            },
+            {
+              "name": "Salmón al Ajillo",
+              "description": "En una mantequilla de ajillo acompañado de mix de vegetales salteados con vino tinto",
+              "price": 280
+            },
+            {
+              "name": "Salmón Agridulce",
+              "description": "Bañado en salsa agridulce, acompañado de mix de vegetales salteados con vino tinto",
+              "price": 280
+            },
+            {
+              "name": "Atún Tataki",
+              "description": "Atún rebosado en togarashi, cremoso de aguacate, acompañado con mix de vegetales salteados con vino tinto",
+              "price": 300
+            },
+            {
+              "name": "Arrachera",
+              "description": "Marinada con chimichurri, guarnición de ensalada, vegetales o papas gajo",
+              "price": 300
+            },
+            {
+              "name": "Rib Eye",
+              "description": "Preparado con mantequilla de romero, guarnición de ensalada, vegetales",
+              "price": 350
+            },
+            {
+              "name": "Rib Eye al Pastor",
+              "description": "Marinado en axiote con jugo de limón, piña al grill y acompañado de papas gajo gratinadas",
+              "price": 350
+            },
+            {
+              "name": "Costillas Orientales",
+              "description": "Salteadas con salsa oriental y chimichurri, acompañado de papas gajo gratinadas",
+              "price": 300
+            },
+            {
+              "name": "Costillas BBQ",
+              "description": "Salteadas con salsa bbq, sobre una cama de lechuga",
+              "price": 300
+            },
+            {
+              "name": "Parrillada",
+              "description": "Mix de embutidos y carnes de la casa, acompañado de guacamole, queso, chicharrón y salsa",
+              "price": 850
+            },
+            {
+              "name": "Hamburguesa del Chef",
+              "description": "Pan brioche, carne de picaña, lechuga, costilla y chilaquiles",
+              "price": 220
+            },
+            {
+              "name": "Hamburguesa Clásica",
+              "description": "Pan brioche, carne de picaña gratinada, jitomate asado, salsa BBQ, acompañado de papas gajo",
+              "price": 220
+            }
+          ]
+        },
+        {
+          "name": "Ramen",
+          "items": [
+            {
+              "name": "Ramen de Res",
+              "description": "Zanahoria, germen de soya, surimi, huevo y filete de res",
+              "price": 120
+            },
+            {
+              "name": "Ramen de Mariscos",
+              "description": "Zanahoria, germen de soya, surimi, huevo, camarón, calamar vaina y calamar trozo",
+              "price": 150
+            }
+          ]
+        },
+        {
+          "name": "Pastas",
+          "items": [
+            {
+              "name": "Pasta de Camarón",
+              "description": "Fettuccine en salsa roja y camarones salteados al ajillo",
+              "price": 230
+            },
+            {
+              "name": "Pasta de Rib Eye",
+              "description": "Fettuccine en salsa teriyaki, champiñón y rib eye a la parrilla",
+              "price": 250
+            },
+            {
+              "name": "Pasta de Pollo",
+              "description": "Fettuccine en salsa de 3 quesos, espinaca y pollo a la plancha",
+              "price": 200
+            }
+          ]
+        },
+        {
+          "name": "Menú Infantil",
+          "items": [
+            {
+              "name": "Box 1",
+              "description": "Hamburguesa de picaña, papas a la francesa, kushiyaque",
+              "price": 170
+            },
+            {
+              "name": "Box 2",
+              "description": "Sushi, pasta, kushiyaque",
+              "price": 170
+            },
+            {
+              "name": "Box 3",
+              "description": "Tacos de arrachera, papas a la francesa, kushiyaque",
+              "price": 170
+            }
+          ]
+        },
+        {
+          "name": "Postres",
+          "items": [
+            {
+              "name": "Helado Tempura",
+              "description": "Helado frito, bañado en salsa de baileys",
+              "price": 130
+            },
+            {
+              "name": "Oreo Tempura",
+              "description": "Galletas oreo tempurizadas, acompañadas con helado artesanal",
+              "price": 130
+            },
+            {
+              "name": "Moscatchón",
+              "description": "Base crocante de galleta y nuez, helado artesanal, mango y coulis de la casa",
+              "price": 150
+            },
+            {
+              "name": "Pan de Elote",
+              "description": "Base de pan de elote, helado artesanal y frutos rojos",
+              "price": 150
+            },
+            {
+              "name": "Brownie",
+              "description": "Base de brownie, mousse de chocolate, un toque de nuez y coulis de mango",
+              "price": 150
+            },
+            {
+              "name": "Pan Francés",
+              "description": "Relleno de crema de frutos rojos, con un glaseado de azúcar y canela",
+              "price": 130
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
