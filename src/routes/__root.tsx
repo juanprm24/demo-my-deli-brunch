@@ -112,13 +112,6 @@ function RootShell({ children }: { children: ReactNode }) {
         <HeadContent />
       </head>
       <body>
-        <div id="app-loader" className="app-loader" aria-hidden>
-          <div className="app-loader-mark">
-            <span className="app-loader-ring" />
-            <p className="app-loader-title">My Deli</p>
-            <p className="app-loader-sub">Brunch &amp; Suits</p>
-          </div>
-        </div>
         {children}
         <Scripts />
       </body>
@@ -129,16 +122,9 @@ function RootShell({ children }: { children: ReactNode }) {
 function RootComponent() {
   const { queryClient } = Route.useRouteContext();
 
-  useEffect(() => {
-    const loader = document.getElementById("app-loader");
-    if (!loader) return;
-    loader.classList.add("is-hidden");
-    const timeout = setTimeout(() => loader.remove(), 650);
-    return () => clearTimeout(timeout);
-  }, []);
-
   return (
     <QueryClientProvider client={queryClient}>
+      {/* Required: nested routes render here. Removing <Outlet /> breaks all child routes. */}
       <Outlet />
     </QueryClientProvider>
   );
