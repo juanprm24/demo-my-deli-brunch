@@ -63,7 +63,7 @@ function Index() {
 
   return (
     <main className="mx-auto w-full max-w-3xl px-5 pb-24 sm:px-8">
-      <header className="pt-14 pb-10 text-center sm:pt-20">
+      <header className="animate-fade-in pt-10 pb-8 text-center sm:pt-20 sm:pb-10">
         <CornerFrame>
           <div className="px-4 py-8 sm:py-12">
             <p className="font-body text-[0.7rem] uppercase tracking-[0.45em] text-gold">
@@ -82,7 +82,7 @@ function Index() {
         </CornerFrame>
       </header>
 
-      <div className="sticky top-0 z-20 -mx-5 border-b border-gold/20 bg-[#0a1520]/92 px-5 pt-3 pb-3 backdrop-blur-md sm:-mx-8 sm:px-8">
+      <div className="sticky-bar-shadow sticky top-0 z-20 -mx-5 border-b border-gold/20 bg-[#0a1520]/92 px-5 pt-2 pb-2 backdrop-blur-md sm:-mx-8 sm:px-8 sm:pt-3 sm:pb-3">
         <div className="grid grid-cols-2 gap-2">
           {menus.map((m) => {
             const active = m.id === activeMenu.id;
@@ -91,13 +91,13 @@ function Index() {
                 key={m.id}
                 onClick={() => switchMenu(m.id)}
                 aria-pressed={active}
-                className={`min-h-[52px] rounded-sm border px-3 py-2 transition-colors ${
+                className={`min-h-[44px] rounded-sm border px-3 py-1.5 transition-colors sm:min-h-[52px] sm:py-2 ${
                   active
                     ? "border-gold bg-gold/12 text-cream"
                     : "border-gold/25 text-muted-foreground"
                 }`}
               >
-                <span className="block font-display text-xl leading-tight tracking-wide">
+                <span className="block font-display text-lg leading-tight tracking-wide sm:text-xl">
                   {m.label}
                 </span>
                 <span className="block font-body text-[0.7rem] tracking-widest text-gold/80">
@@ -108,7 +108,7 @@ function Index() {
           })}
         </div>
 
-        <div className="mt-3 flex items-center gap-2 border-b border-gold/25 pb-1">
+        <div className="mt-2 flex items-center gap-2 border-b border-gold/25 pb-1 sm:mt-3">
           <span className="font-body text-sm text-gold/70" aria-hidden>
             ⌕
           </span>
@@ -117,20 +117,20 @@ function Index() {
             onChange={(e) => setQuery(e.target.value)}
             placeholder="Buscar platillo…"
             aria-label="Buscar platillo"
-            className="h-11 w-full bg-transparent font-body text-base text-cream placeholder:text-muted-foreground/70 focus:outline-none"
+            className="h-9 w-full bg-transparent font-body text-base text-cream placeholder:text-muted-foreground/70 focus:outline-none sm:h-11"
           />
           {query ? (
             <button
               onClick={() => setQuery("")}
               aria-label="Limpiar búsqueda"
-              className="min-h-11 px-2 font-body text-sm text-gold"
+              className="min-h-9 px-2 font-body text-sm text-gold sm:min-h-11"
             >
               Limpiar
             </button>
           ) : null}
         </div>
 
-        <div className="-mx-5 mt-3 overflow-x-auto px-5 sm:-mx-8 sm:px-8 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
+        <div className="-mx-5 mt-2 overflow-x-auto px-5 sm:-mx-8 sm:mt-3 sm:px-8 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
           <div className="flex w-max gap-2">
             {[{ name: "all", label: "Todo" }, ...activeMenu.categories.map((c) => ({ name: c.name, label: c.name }))].map(
               (c) => {
@@ -140,7 +140,7 @@ function Index() {
                     key={c.name}
                     onClick={() => setCategory(c.name)}
                     aria-pressed={active}
-                    className={`min-h-11 whitespace-nowrap rounded-full border px-5 font-body text-sm tracking-wide transition-colors ${
+                    className={`min-h-9 whitespace-nowrap rounded-full border px-4 font-body text-sm tracking-wide transition-colors sm:min-h-11 sm:px-5 ${
                       active
                         ? "border-gold bg-gold text-primary-foreground"
                         : "border-gold/30 text-muted-foreground"
@@ -162,7 +162,7 @@ function Index() {
           </p>
         ) : (
           sections.map((section) => (
-            <section key={section.name} className="pt-12">
+            <section key={section.name} className="pt-8 sm:pt-12">
               <h2 className="text-center font-display text-3xl tracking-[0.12em] text-gold">
                 {section.name}
               </h2>

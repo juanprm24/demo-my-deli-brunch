@@ -7,7 +7,7 @@ type Props = {
 
 export function DishRow({ name, description, price, currencySymbol }: Props) {
   return (
-    <li className="animate-rise py-5">
+    <li className="dish-hover animate-rise py-4 sm:py-5">
       <div className="flex items-end gap-2">
         <h3 className="min-w-0 font-display text-[1.375rem] leading-tight tracking-wide text-cream">
           {name}

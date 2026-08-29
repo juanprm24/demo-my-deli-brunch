@@ -1,6 +1,6 @@
 export function CornerFrame({ children }: { children: React.ReactNode }) {
   return (
-    <div className="relative">
+    <div className="animate-fade-in relative">
       <span className="pointer-events-none absolute -left-1 -top-1 h-6 w-6 border-l border-t border-gold/50" />
       <span className="pointer-events-none absolute -right-1 -top-1 h-6 w-6 border-r border-t border-gold/50" />
       <span className="pointer-events-none absolute -bottom-1 -left-1 h-6 w-6 border-b border-l border-gold/50" />
