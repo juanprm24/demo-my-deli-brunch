@@ -1,8 +1,30 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { useMemo, useState } from "react";
+import { useCallback, useMemo, useState } from "react";
 import menuData from "@/data/menu-data.json";
 import { DishRow } from "@/components/menu/DishRow";
 import { CornerFrame, Divider } from "@/components/menu/Ornament";
+import { SplashLoader } from "@/components/menu/SplashLoader";
+import { HeroSection } from "@/components/menu/HeroSection";
+import { DishDetailDrawer, type FeaturedDish } from "@/components/menu/DishDetailDrawer";
+
+/** Featured dishes with photo detail — demo shows only 2 as a preview */
+const FEATURED_DISHES: Record<string, Omit<FeaturedDish, "name" | "description" | "price" | "currencySymbol">> = {
+  "Pan Francés": {
+    image: "/demo-my-deli-brunch/dish-pan-frances.jpg",
+    category: "Clásicos",
+    tags: ["Pistache", "Berries", "Mermelada", "Fresa"],
+    prepTime: "12–15 min",
+    highlight: "Favorito de la casa — mousse de pistache artesanal",
+  },
+  "Avo Toast": {
+    image: "/demo-my-deli-brunch/dish-avo-toast.jpg",
+    category: "Entrepanes",
+    tags: ["Sourdough", "Queso de cabra", "Tocino", "Pepitas"],
+    prepTime: "10–12 min",
+    highlight: "Nuestro best seller — pan sourdough de masa madre",
+  },
+};
+
 
 const { restaurant } = menuData;
 const menus = menuData.menus as Array<{
@@ -35,6 +57,17 @@ function Index() {
   const [menuId, setMenuId] = useState(firstMenu.id);
   const [category, setCategory] = useState<string>("all");
   const [query, setQuery] = useState("");
+  const [activeDish, setActiveDish] = useState<FeaturedDish | null>(null);
+
+  const openDish = useCallback((item: { name: string; description?: string; price: number }, featured: Omit<FeaturedDish, "name" | "description" | "price" | "currencySymbol">) => {
+    setActiveDish({
+      name: item.name,
+      description: item.description ?? "",
+      price: item.price,
+      currencySymbol: restaurant.currencySymbol,
+      ...featured,
+    });
+  }, []);
 
   const activeMenu = menus.find((m) => m.id === menuId) ?? firstMenu;
 
@@ -62,6 +95,9 @@ function Index() {
   };
 
   return (
+    <>
+      <SplashLoader />
+      <HeroSection />
     <main className="mx-auto w-full max-w-3xl px-5 pb-24 sm:px-8">
       <header className="animate-fade-in pt-10 pb-8 text-center sm:pt-20 sm:pb-10">
         <CornerFrame>
@@ -170,15 +206,19 @@ function Index() {
                 <Divider />
               </div>
               <ul className="mt-4 divide-y divide-gold/12">
-                {section.items.map((item) => (
-                  <DishRow
-                    key={`${section.name}-${item.name}`}
-                    name={item.name}
-                    description={item.description}
-                    price={item.price}
-                    currencySymbol={restaurant.currencySymbol}
-                  />
-                ))}
+                {section.items.map((item) => {
+                  const featured = FEATURED_DISHES[item.name];
+                  return (
+                    <DishRow
+                      key={`${section.name}-${item.name}`}
+                      name={item.name}
+                      description={item.description}
+                      price={item.price}
+                      currencySymbol={restaurant.currencySymbol}
+                      onTap={featured ? () => openDish(item, featured) : undefined}
+                    />
+                  );
+                })}
               </ul>
             </section>
           ))
@@ -192,5 +232,7 @@ function Index() {
         </p>
       </footer>
     </main>
+    <DishDetailDrawer dish={activeDish} onClose={() => setActiveDish(null)} />
+    </>
   );
 }
