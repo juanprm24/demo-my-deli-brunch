@@ -92,14 +92,18 @@ export function HeroSection() {
       </div>
 
       {/* Scroll indicator */}
-      <div className="hero-scroll-indicator">
+      <button
+        onClick={() => document.getElementById("menu-section")?.scrollIntoView({ behavior: "smooth" })}
+        className="hero-scroll-indicator cursor-pointer transition-transform hover:scale-105 active:scale-95 focus:outline-none"
+        aria-label="Ir al menú"
+      >
         <span className="hero-scroll-text">Explorar Menú</span>
         <div className="hero-scroll-arrow">
           <svg width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true">
             <path d="M10 4 L10 14 M5 10 L10 15 L15 10" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
           </svg>
         </div>
-      </div>
+      </button>
     </section>
   );
 }

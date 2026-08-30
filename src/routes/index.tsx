@@ -2,7 +2,7 @@ import { createFileRoute } from "@tanstack/react-router";
 import { useCallback, useMemo, useState } from "react";
 import menuData from "@/data/menu-data.json";
 import { DishRow } from "@/components/menu/DishRow";
-import { CornerFrame, Divider } from "@/components/menu/Ornament";
+import { Divider } from "@/components/menu/Ornament";
 import { SplashLoader } from "@/components/menu/SplashLoader";
 import { HeroSection } from "@/components/menu/HeroSection";
 import { DishDetailDrawer, type FeaturedDish } from "@/components/menu/DishDetailDrawer";
@@ -98,28 +98,9 @@ function Index() {
     <>
       <SplashLoader />
       <HeroSection />
-    <main className="mx-auto w-full max-w-3xl px-5 pb-24 sm:px-8">
-      <header className="animate-fade-in pt-10 pb-8 text-center sm:pt-20 sm:pb-10">
-        <CornerFrame>
-          <div className="px-4 py-8 sm:py-12">
-            <p className="font-body text-[0.7rem] uppercase tracking-[0.45em] text-gold">
-              Carta
-            </p>
-            <h1 className="mt-4 font-display text-[3.25rem] leading-[1.05] tracking-wide text-cream sm:text-7xl">
-              {restaurant.name}
-            </h1>
-            <p className="mt-3 font-body text-base tracking-[0.3em] uppercase text-muted-foreground">
-              {restaurant.tagline}
-            </p>
-            <div className="mt-7 flex justify-center">
-              <Divider />
-            </div>
-          </div>
-        </CornerFrame>
-      </header>
-
-      <div className="sticky-bar-shadow sticky top-0 z-20 -mx-5 border-b border-gold/20 bg-[#0a1520]/92 px-5 pt-2 pb-2 backdrop-blur-md sm:-mx-8 sm:px-8 sm:pt-3 sm:pb-3">
-        <div className="grid grid-cols-2 gap-2">
+    <main id="menu-section" className="mx-auto w-full max-w-3xl px-5 pb-24 sm:px-8 pt-4 sm:pt-8 scroll-mt-4">
+      <div className="sticky-bar-shadow sticky top-0 z-20 -mx-5 border-b border-gold/20 bg-[#0a1520]/95 px-5 pt-3 pb-3 backdrop-blur-md sm:-mx-8 sm:px-8 sm:pt-4 sm:pb-4">
+        <div className="grid grid-cols-2 gap-2.5 sm:gap-4">
           {menus.map((m) => {
             const active = m.id === activeMenu.id;
             return (
@@ -127,16 +108,16 @@ function Index() {
                 key={m.id}
                 onClick={() => switchMenu(m.id)}
                 aria-pressed={active}
-                className={`min-h-[44px] rounded-sm border px-3 py-1.5 transition-colors sm:min-h-[52px] sm:py-2 ${
+                className={`min-h-[50px] rounded-lg border px-3.5 py-2 transition-all duration-300 sm:min-h-[58px] sm:py-2.5 cursor-pointer text-center ${
                   active
-                    ? "border-gold bg-gold/12 text-cream"
-                    : "border-gold/25 text-muted-foreground"
+                    ? "border-gold bg-gold/15 text-cream shadow-[0_0_20px_oklch(0.74_0.09_82_/_15%)]"
+                    : "border-gold/20 bg-[#0c1926]/50 text-muted-foreground hover:border-gold/40 hover:text-cream/80"
                 }`}
               >
-                <span className="block font-display text-lg leading-tight tracking-wide sm:text-xl">
+                <span className="block font-display text-xl sm:text-2xl leading-tight tracking-wide">
                   {m.label}
                 </span>
-                <span className="block font-body text-[0.7rem] tracking-widest text-gold/80">
+                <span className="block font-body text-[0.72rem] tracking-widest text-gold/80 mt-0.5 sm:text-[0.75rem]">
                   {m.hours}
                 </span>
               </button>
